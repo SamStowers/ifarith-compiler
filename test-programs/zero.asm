@@ -16,8 +16,12 @@ _start:	call _main
 _main:	push rbp
 	mov rbp, rsp
 	sub rsp, 16
-	mov rax, [rbp-8]
-	jmp finish_up
+	mov esi, 0
+	mov [rbp-8], esi
+	mov esi, [rbp-8]
+	lea rdi, [rel int_format]
+	mov eax, 0
+	call _printf
 finish_up:	add rsp, 16
 	leave 
 	ret 
