@@ -1,0 +1,5 @@
+((mov-lit r1 4)
+(mov-lit r2 2)
+(idiv r1 r2)
+(mov-reg r2 r1)
+(print r2))
