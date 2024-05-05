@@ -1,4 +1,0 @@
-((mov-lit r1 10)
-	(mov-lit r2 5)
-	(mul r1 r2)
- (print r1))
