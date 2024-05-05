@@ -15,10 +15,33 @@ _start:	call _main
 
 _main:	push rbp
 	mov rbp, rsp
-	sub rsp, 16
-	mov rax, [rbp-8]
+	sub rsp, 96
+	mov esi, 0
+	mov esi, 0
+	mov [rbp-8], esi
+	mov edi, [rbp-8]
+	mov eax, [rbp-48]
+	cmp eax, edi
+	mov [rbp-48], eax
+	jz lab1266
+	jmp lab1268
+lab1266:	mov esi, 1
+	mov [rbp-40], esi
+	mov esi, [rbp-40]
+	lea rdi, [rel int_format]
+	mov eax, 0
+	call _printf
+	mov rax, 0
 	jmp finish_up
-finish_up:	add rsp, 16
+lab1268:	mov esi, 0
+	mov [rbp-32], esi
+	mov esi, [rbp-32]
+	lea rdi, [rel int_format]
+	mov eax, 0
+	call _printf
+	mov rax, 0
+	jmp finish_up
+finish_up:	add rsp, 96
 	leave 
 	ret 
 
